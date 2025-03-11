@@ -42,10 +42,8 @@
             text.style.transform = `scale(${scale})`;
             // 表示位置を再調整
             const textHeight = text.offsetHeight * scale;
-            const textWidth = text.offsetWidth * scale;
             text.style.position = 'absolute';
             text.style.top = `calc(50% - ${textHeight / 2}px)`;
-            text.style.left = `calc(50% - ${textWidth / 2}px)`;
         }
         window.addEventListener("resize", resize);
         resize();
