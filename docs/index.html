@@ -11,14 +11,41 @@
         gtag('js', new Date());
         gtag('config', 'G-NBE684C7LV');
     </script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            background-color: black; /* デフォルトの背景色を黒に設定 */
+        }
+        @media (prefers-color-scheme: light) {
+            body {
+                color: black;
+                background-color: white; /* ライトモードの背景色を白に設定 */
+            }
+        }
+    </style>
 </head>
-<body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;width:100vw;overflow:hidden;background-color:black;color:white;font-weight:bold;text-align:center;">
+<body>
     <span id="text" style="font-size:10vw;white-space:nowrap;">hiphop.dj</span>
     <script>
         const text = document.getElementById("text");
         function resize() {
             const scale = window.innerWidth / text.offsetWidth;
             text.style.transform = `scale(${scale})`;
+            // 表示位置を再調整
+            const textHeight = text.offsetHeight * scale;
+            const textWidth = text.offsetWidth * scale;
+            text.style.position = 'absolute';
+            text.style.top = `calc(50% - ${textHeight / 2}px)`;
+            text.style.left = `calc(50% - ${textWidth / 2}px)`;
         }
         window.addEventListener("resize", resize);
         resize();
