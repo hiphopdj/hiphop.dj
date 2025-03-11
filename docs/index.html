@@ -41,9 +41,9 @@
             const scale = window.innerWidth / text.offsetWidth;
             text.style.transform = `scale(${scale})`;
             // 表示位置を再調整
+            const textHeight = text.offsetHeight * scale;
             text.style.position = 'absolute';
-            text.style.top = '-50%';
-            text.style.transformOrigin = 'top center';
+            text.style.top = `calc(50% - ${textHeight / 2}px)`;
         }
         window.addEventListener("resize", resize);
         resize();
