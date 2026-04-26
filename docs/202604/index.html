@@ -23,6 +23,19 @@
         }
         audio {
             width: 300px;
+            margin-bottom: 16px;
+        }
+        .download-link {
+            display: inline-block;
+            padding: 10px 16px;
+            border-radius: 6px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .download-link:hover {
+            background-color: #555;
         }
     </style>
 </head>
@@ -33,6 +46,9 @@
             <source src="ノンデリカレー.mp3" type="audio/mpeg">
             お使いのブラウザはHTML5オーディオタグに対応していません。
         </audio>
+        <div>
+            <a class="download-link" href="ノンデリカレー.mp3" download>ダウンロード</a>
+        </div>
     </div>
 </body>
 </html>
